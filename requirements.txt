@@ -1,0 +1,6 @@
+paho-mqtt
+pandas
+scikit-learn
+pytest
+filelock
+python-dotenv
