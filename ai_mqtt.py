@@ -152,6 +152,26 @@ def on_message(client, userdata, msg):
 
     save_data(data)
 
+    # Update LED consumption tracking
+    try:
+        from led_analyzer import compute_led_daily_energy
+        from led_consumption_manager import update_led_daily
+        
+        daily_led = compute_led_daily_energy()
+        today = datetime.now(timezone.utc).date().isoformat()
+        
+        if today in daily_led:
+            led_data = daily_led[today]
+            update_led_daily(
+                today,
+                led_data["led1_wh"],
+                led_data["led2_wh"],
+                int(led_data["led1_on_minutes"]),
+                int(led_data["led2_on_minutes"])
+            )
+    except Exception:
+        logger.exception("Failed to update LED consumption")
+
     # Update baseline incrementally with the new row (enqueue for background writer)
     try:
         row = {"time": datetime.now(timezone.utc).isoformat(), "power_mW": data.get("power_mW")}

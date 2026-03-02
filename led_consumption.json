@@ -1,0 +1,23 @@
+{
+  "daily": {
+    "2026-03-02": {
+      "led1_wh": 2.2375460752777743,
+      "led2_wh": 0.0,
+      "led1_on_minutes": 268,
+      "led2_on_minutes": 0
+    },
+    "2026-03-03": {
+      "led1_wh": 6.0,
+      "led2_wh": 9.6,
+      "led1_on_minutes": 720.0,
+      "led2_on_minutes": 720.0
+    },
+    "2026-03-04": {
+      "led1_wh": 6.0,
+      "led2_wh": 8.8,
+      "led1_on_minutes": 720.0,
+      "led2_on_minutes": 660.0
+    }
+  },
+  "last_updated": "2026-03-02T17:07:45.549941+00:00"
+}
